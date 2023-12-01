@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अंश पंवार's Blog</title>
+<link rel="stylesheet" href="styles.css"> <!-- Create a separate CSS file for styles -->
+
+<style>
+/* Your existing styles remain unchanged */
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+/* Adjust styles for smaller screens */
+header {
+padding: 10px;
+}
+
+nav a {
+font-size: 14px;
+}
+
+section {
+padding: 10px;
+}
+
+#artistic-elements img {
+max-width: 100%;
+}
+}
+
+/* Additional Styles for New Features */
+/* Onboarding Overlay */
+#onboarding-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+#onboarding-content {
+background: #FFF;
+padding: 20px;
+border-radius: 8px;
+}
+
+/* Newsletter Subscription Form */
+#newsletter-form {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #FFF;
+padding: 20px;
+border-radius: 8px;
+text-align: center;
+}
+
+/* World of Story Section */
+#world-of-story {
+display: none;
+text-align: center;
+padding: 20px;
+background: #FFF;
+border-radius: 8px;
+}
+
+/* Feedback Form */
+#feedback-form {
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #FFF;
+padding: 20px;
+border-radius: 8px;
+text-align: center;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const cursorShade = document.getElementById('cursor-shade');
+document.addEventListener('mousemove', (e) => {
+cursorShade.style.left = `${e.pageX - 15}px`;
+cursorShade.style.top = `${e.pageY - 15}px`;
+});
+
+// Onboarding Overlay
+const onboardingOverlay = document.getElementById('onboarding-overlay');
+const onboardingContent = document.getElementById('onboarding-content');
+
+// Display onboarding overlay for new users
+setTimeout(() => {
+onboardingOverlay.style.display = 'flex';
+}, 1000);
+
+// Close onboarding overlay on click
+onboardingOverlay.addEventListener('click', () => {
+onboardingOverlay.style.display = 'none';
+});
+
+// Newsletter Subscription Form
+const newsletterForm = document.getElementById('newsletter-form');
+const newsletterButton = document.getElementById('newsletter-button');
+
+// Display newsletter form on button click
+newsletterButton.addEventListener('click', () => {
+newsletterForm.style.display = 'block';
+});
+
+// World of Story Section
+const worldOfStory = document.getElementById('world-of-story');
+
+// Display world of story section on scroll
+window.addEventListener('scroll', () => {
+if (window.scrollY > 500) {
+worldOfStory.style.display = 'block';
+}
+});
+
+// Feedback Form
+const feedbackForm = document.getElementById('feedback-form');
+const closeFeedbackButton = document.getElementById('close-feedback-button');
+
+// Display feedback form on page close
+window.addEventListener('beforeunload', () => {
+feedbackForm.style.display = 'block';
+});
+
+// Close feedback form on button click
+closeFeedbackButton.addEventListener('click', () => {
+feedbackForm.style.display = 'none';
+});
+});
+</script>
+</head>
+
+<body>
+<div id="earth"></div>
+<div id="cursor-shade"></div>
+
+<header>
+<h1>अंश पंवार's Blog</h1>
+<p>खोज और सीखने की मेरी दुनिया में आपका स्वागत है!</p>
+</header>
+
+<nav>
+<a href="#shop">शॉप</a>
+<a href="#book">किताब</a>
+<a href="#recommendation">सुझाव</a>
+<a href="#podcast">पॉडकास्ट</a>
+<a href="#articles">लेख</a>
+<a href="#jobs">नौकरियाँ</a>
+<a href="#about-me">मेरे बारे में</a>
+</nav>
+
+<section>
+<h2>नवीनतम पोस्ट</h2>
+<article>
+<h3>पोस्ट शीर्षक 1</h3>
+<p>यह आपकी जीवविज्ञान के बारे में पहली ब्लॉग पोस्ट है।</p>
+</article>
+
+<article>
+<h3>पोस्ट शीर्षक 2</h3>
+<p>जीवविज्ञान की दुनिया में एक और दिलचस्प विषय।</p>
+</article>
+<!-- Add more articles as needed -->
+
+<!-- Onboarding Overlay Content -->
+<div id="onboarding-overlay">
+<div id="onboarding-content">
+<h3>नमस्ते!</h3>
+<p>आपका स्वागत है! हमारे ब्लॉग का उपयोग करने के लिए शुक्रिया।</p>
+<p>नवीनतम पोस्ट देखने के लिए नैविगेशन बार का उपयोग करें।</p>
+<p>सवाल या सुझाव के लिए हमसे संपर्क करें।</p>
+<button onclick="document.getElementById('onboarding-overlay').style.display='none'">शुरू करें</button>
+</div>
+</div>
+</section>
+
+<!-- Newsletter Subscription Form -->
+<div id="newsletter-form">
+<h3>सदस्यता लें</h3>
+<p>हमारे न्यूज़लेटर और ब्लॉग सुचना के लिए अपना ईमेल दर्ज करें:</p>
+<form>
+<input type="email" placeholder="आपका ईमेल" required>
+<button type="submit">सदस्यता लें</button>
+</form>
+</div>
+
+<section id="about-me">
+<h2>मेरे बारे में</h2>
+<p>यह वह सेक्शन है जहाँ आप अपने बारे में परिचित करा सकते हैं। अपनी तस्वीरें और वीडियोज़ जोड़ें।</p>
+<!-- Add your photos and videos here -->
+</section>
+
+<!-- World of Story Section -->
+<div id="world-of-story">
+<h2>कहानी का दुनिया</h2>
+<p>एक नए और रोमांचक कहानी के लिए यहां दाखिल हों:</p>
+<button onclick="window.location.href='#new-story'">कहानी में प्रवेश करें</button>
+</div>
+
+<!-- Feedback Form -->
+<div id="feedback-form">
+<h3>हमें बताएं कैसा था आपका अनुभव</h3>
+<p>कृपया हमें आपकी राय दें ताकि हम और बेहतर सेवा कर सकें।</p>
+<form>
+<textarea placeholder="आपकी राय लिखें..." required></textarea>
+<button type="button" id="close-feedback-button">बंद करें</button>
+<button type="submit">सबमिट करें</button>
+</form>
+</div>
+
+<footer>
+<p>&copy; 2023 अंश पंवार | जीवविज्ञान से संबंधित</p>
+<a href="https://www.instagram.com/your_instagram_username" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+<a href="https://www.linkedin.com/in/your_linkedin_username" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+<a href="https://www.youtube.com/user/your_youtube_username" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>
+<a href="https://www.facebook.com/your_facebook_username" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+<a href="https://twitter.com/your_twitter_username" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+</footer>
+</body>
+
+</html>
